@@ -1,0 +1,27 @@
+{
+  "name": "interface-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild index.js --bundle --outfile=./dist/interface-js.js",
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "\\.[jt]sx?$":  [ 
+        "esbuild-jest", 
+        {
+          "sourcemap": true
+        }
+      ]
+    },
+    "testPathIgnorePatterns": ["/node_modules/", "/dist/", "/types/"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+  }
+}

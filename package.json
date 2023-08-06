@@ -1,0 +1,17 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "install:all": "pnpm recursive install",
+    "test:all": "pnpm recursive test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GNU GPL V3",
+  "devDependencies": {
+    "esbuild": "^0.18.13",
+    "esbuild-jest": "^0.5.0",
+    "jest": "^29.6.2"
+  }
+}

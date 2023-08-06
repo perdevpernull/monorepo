@@ -1,0 +1,19 @@
+{
+  "name": "sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild index.js --bundle --outfile=./dist/sandbox.js --global-name=plugins.sandbox['1.0.0']",
+    "build2": "esbuild index.js --bundle --external:dataset --outfile=./dist/sandbox.js",
+    "go": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dataset": "workspace:^",
+    "interface-js": "workspace:^"
+  }
+}
