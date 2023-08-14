@@ -1,4 +1,4 @@
 export default {
-  $id: "https://MyInfo.com/schemas/Entity.schema.json",
-  type: "string",
+  "$id": "https://MyInfo.com/schemas/Entity.schema.json",
+  "type": "string",
 };

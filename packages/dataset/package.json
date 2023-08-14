@@ -6,19 +6,25 @@
   "type": "module",
   "scripts": {
     "build": "esbuild index.js --bundle --outfile=./dist/dataset.js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "GNU GPL V3",
   "dependencies": {
     "ajv": "^8.12.0",
-    "interface-js": "workspace:^"
+    "interface-js": "workspace:^",
+    "utils": "workspace:^"
   },
   "jest": {
     "verbose": true,
     "transform": {
-      "\\.[jt]sx?$": ["esbuild-jest", {"sourcemap": true}]
+      "\\.[jt]sx?$": [
+        "esbuild-jest",
+        {
+          "sourcemap": true
+        }
+      ]
     },
     "testPathIgnorePatterns": [
       "/node_modules/",

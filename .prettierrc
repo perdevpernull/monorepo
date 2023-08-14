@@ -1,0 +1,13 @@
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 150,
+  "quoteProps": "preserve",
+  "bracketSpacing": false,
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {"parser": "json5"}
+    }
+  ]
+}

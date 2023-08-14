@@ -1,20 +1,10 @@
 export default {
   "$id": "https://MyInfo.com/schemas/DatasetEntity.schema.json",
   "type": "object",
-  "required": ["nodeTypes", "nextNodeID", "nodes", "tagNodes", "rootNodes", "data"],
+  "required": ["nodeTypes", "nextNodeID", "nodes", "tags", "rootNodes", "data"],
   "properties": {
     "nodeTypes": {
       "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["nodeType", "classname", "version"],
-        "properties": {
-          "nodeType": {"type": "string"},
-          "classname": {"type": "string"},
-          "version": {"type": "string"},
-        },
-        "additionalProperties": false,
-      },
     },
     "nextNodeID": {
       "type": "number",
@@ -24,9 +14,9 @@ export default {
       "patternProperties": {
         "^.+:[0-9]+$": {
           "type": "object",
-          "required": ["ID", "type", "text", "links"],
+          "required": ["ID", "type", "text", "links", "tags"],
           "properties": {
-            "ID": {"type": "string"},
+            "ID": {"type": "number"},
             "type": {"type": "string"},
             "text": {"type": "string"},
             "links": {
@@ -47,13 +37,19 @@ export default {
                 "additionalProperties": false,
               },
             },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string",
+              },
+            },
           },
           "additionalProperties": false,
         },
       },
       "additionalProperties": false,
     },
-    "tagNodes": {
+    "tags": {
       "type": "object",
     },
     "rootNodes": {

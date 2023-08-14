@@ -1,13 +1,11 @@
 {
-  "name": "interface-js",
+  "name": "utils",
   "version": "1.0.0",
   "description": "",
-  "main": "./index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "esbuild index.js --bundle --outfile=./dist/interface-js.js",
-    "test": "jest --coverage",
-    "eslint": "eslint *"
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",

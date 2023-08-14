@@ -5,15 +5,24 @@
   "main": "./index.js",
   "type": "module",
   "scripts": {
-    "build": "esbuild index.js --bundle --outfile=./dist/sandbox.js --global-name=plugins.sandbox['1.0.0']",
-    "build2": "esbuild index.js --bundle --external:dataset --outfile=./dist/sandbox.js",
-    "go": "node index.js"
+    "build1": "esbuild index.js --bundle --outfile=./dist/sandbox.js --global-name=plugins.sandbox['1.0.0']",
+    "build1.5": "esbuild index.js --bundle --external:dataset --outfile=./dist/sandbox.js",
+    "build2a": "esbuild index2.js --bundle --define:process.env.NODE_DEV=true --minify-syntax --tree-shaking=true --outfile=./dist/sandbox.js",
+    "build2b": "esbuild index2.js --bundle --define:process.env.NODE_DEV=false --minify-syntax --tree-shaking=true --outfile=./dist/sandbox.js",
+    "build3": "esbuild index3.js --bundle --outfile=./dist/sandbox.js",
+    "buildSandbox": "esbuild ./dist/sandbox.js --bundle --minify-syntax --tree-shaking=true --outfile=./dist/sandbox2.js",
+    "go": "node index.js",
+    "go2a": "set NODE_DEV=defined & set DEBUG=* & node index2.js",
+    "go2b": "set DEBUG=* & node index2.js",
+    "go3": "node index3.js",
+    "goSandbox": "node ./dist/sandbox.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dataset": "workspace:^",
+    "debug": "^4.3.4",
     "interface-js": "workspace:^"
   }
 }
